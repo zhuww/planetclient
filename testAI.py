@@ -42,9 +42,9 @@ target = target[index]
 
 datasize = len(data)
 #print datasize
-#cvs =  CV.cross_val_score(clf, data, target, cv=15, n_jobs=15)
-#print "F1: %0.2f (+/- %0.2f)" % (np.mean(cvs),np.std(cvs))
-#print cross_validation(clf, data, target, verbose=True)
-clf.fit(data, target)
-cPickle.dump(clf, open('clfsvm.pkl', 'wb'), protocol=2)
+cvs =  CV.cross_val_score(clf, data, target, cv=15, n_jobs=15)
+print "F1: %0.2f (+/- %0.2f)" % (np.mean(cvs),np.std(cvs))
+print cross_validation(clf, data, target, verbose=True)
+#clf.fit(data, target)
+#cPickle.dump(clf, open('clfsvm.pkl', 'wb'), protocol=2)
 
